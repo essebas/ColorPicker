@@ -1,0 +1,77 @@
+.contenedor-general {
+    margin-top: 20px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 600px;
+    height: auto;
+    display: grid;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.color-container {
+    display: inline-flex;
+    width: 100%;
+    justify-content: center;
+    margin-block-end: 1em;
+}
+
+.zona-color {
+    width: 49%;
+    background-color: hsla(180, 50, 50, 1);
+    height: 400px;
+    float: left;
+    border-radius: 5px;
+    box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.3);
+}
+.zona-degrade {
+    text-align: center;
+    width: 100%;
+    margin-top: 2%;
+    background-color: hsla(180, 50, 50, 1);
+    height: auto;
+    float: left;
+    border-radius: 5px;
+    box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.espacio {
+    width: 2%;
+    height: 400px;
+    float: left;
+    border-radius: 5px;
+}
+
+.color {
+    margin: 5px;
+    width: 65px; 
+    height: 65px;
+    background-color: hsla(180, 50, 50, 1);
+    border-radius: 20px;
+    box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.3);
+   
+}
+.zona-controles {
+    width: 49%;
+    background-color: white;
+    height: 400px;
+    float: right;
+    border-radius: 5px;
+    box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.3);   
+}
+
+input {
+    display: block;
+    margin: 20px;
+    width: 85%;
+}
+
+label {
+    text-align: left;
+    float: left;
+    width: 100%;
+    padding-left: 20px;
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Taller Colores</title>
+    <!--<script type="text/javascript" src="ejercicio.js"></script>-->
+    <link rel="stylesheet" href="style.css">
+    <style>
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Color picker</h1>
+    <div class="contenedor-general">
+
+        <div class="sub-content1">
+            <div class="zona-color" id='muestra'>
+                <p>Muestra Color</p>
+
+            </div>
+
+            <div class="zona-controles">
+                <p>Controles Color HSL</p>
+                <label for="color">Color (H)</label>
+                <input type="range" id="color" min="0" max="360" value="180">
+                <label for="saturacion">Saturacion (S)</label>
+                <input type="range" id="saturacion" min="0" max="100" value="50">
+                <label for="intensidad">Intensidad (L)</label>
+                <input type="range" id="intensidad" min="0" max="100" value="50">
+                <span style="padding-right: 20px;">H:180</span>
+                <span style="padding-right: 20px;">S:50</span>
+                <span style="padding-right: 20px;">L:50</span>
+            </div>
+        </div>
+
+        <div class="sub-content2">
+            <div class="zona-degrade" id='degrade'>
+                <p>Muestra de Colores</p>
+                <div class="color-container">
+                    <div class="color" id='c1'>
+
+                    </div>
+                    <div class="color" id='c2'>
+
+                    </div>
+                    <div class="color" id='c3'>
+
+                    </div>
+                    <div class="color" id='c4'>
+
+                    </div>
+                    <div class="color" id='c5'>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script type="text/javascript">
+
+        const VALOR = 1;
+
+        var hue = document.getElementById('color');
+        var sat = document.getElementById('saturacion');
+        var lightness = document.getElementById('intensidad');
+
+        hue.addEventListener('input', setColorParams);
+        sat.addEventListener('input', setColorParams);
+        lightness.addEventListener('input', setColorParams);
+
+        function setColorParams() {
+            let colorContainer = document.getElementById('muestra');
+            colorContainer.style.backgroundColor = "hsla(" + hue.value + ", " +
+                sat.value + "%, " + lightness.value + "%, " + 1 + ")";
+
+            let color1 = document.getElementById('c1');
+            color1.style.backgroundColor = "hsla(" + hue.value + ", " +
+                sat.value + "%, " + 10 + "%, " + 1 + ")";
+
+            let color2 = document.getElementById('c2');
+            color2.style.backgroundColor = "hsla(" + hue.value + ", " +
+                sat.value + "%, " + 30 + "%, " + 1 + ")";
+
+            let color3 = document.getElementById('c3');
+            color3.style.backgroundColor = "hsla(" + hue.value + ", " + sat.value + "%, " + lightness.value + "%, " + 1 + ")";
+
+            let color4 = document.getElementById('c4');
+            color4.style.backgroundColor = "hsla(" + hue.value + ", " + sat.value + "%, " + 70 + "%, " + 1 + ")";
+
+            let color5 = document.getElementById('c5');
+            color5.style.backgroundColor = "hsla(" + hue.value + ", " + sat.value + "%, " + 90 + "%, " + 1 + ")";
+
+            let paramsArray = document.getElementsByTagName('span');
+
+            Array.from(paramsArray).forEach(function (item, index) {
+
+                if (index == 0) {
+                    item.innerText = "H:" + hue.value;
+                }
+                if (index == 1) {
+                    item.innerText = "S:" + sat.value;
+                }
+                if (index == 2) {
+                    item.innerText = "L:" + lightness.value;
+                }
+            });
+        }
+
+    </script>
+</body>
+
+</html>
